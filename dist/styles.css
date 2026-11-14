@@ -77,9 +77,6 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
 .stamp-tu { top: 28%; right: 0; transform: translateY(-8px) rotate(5deg); }
 .date-scribble { position: absolute; right: 6%; bottom: 4%; display: flex; align-items: baseline; gap: 4px; color: var(--clay); font-family: var(--hand); font-size: 2.4rem; transform: rotate(7deg); }
 .date-scribble small { font-size: .8rem; text-transform: uppercase; }
-.tiny-star { position: absolute; color: var(--green); font-size: 1.2rem; }
-.star-one { top: 7%; right: 9%; transform: rotate(12deg); }
-.star-two { bottom: 17%; left: 7%; color: var(--clay); transform: rotate(-13deg); }
 .hero-foot { display: flex; justify-content: space-between; padding: 12px 0 2px; border-top: 1px solid rgba(54,54,47,.18); color: var(--soft-ink); font-size: .61rem; letter-spacing: .13em; text-transform: uppercase; }
 .handwritten { color: var(--clay); font-family: var(--hand); font-size: 1.13em; letter-spacing: -.04em; text-transform: none; }
 .birthdays { position: relative; padding: 102px 0 96px; background: #e8ddcd; }
