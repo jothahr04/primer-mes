@@ -44,7 +44,7 @@ nav a:hover, nav a:focus-visible { color: var(--clay); text-decoration: underlin
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 17px; color: var(--clay); font-size: .67rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
 .tiny-sun { font-size: 1.05rem; }
 .heart-i { position: relative; display: inline; }
-.heart-i-heart { position: absolute; top: .06em; left: 50%; color: var(--clay); font-family: var(--sans); font-size: .22em; line-height: 1; transform: translateX(-50%); pointer-events: none; }
+.heart-i-heart { position: absolute; top: .24em; left: 50%; color: inherit; font-family: var(--sans); font-size: .18em; line-height: 1; transform: translateX(-50%); pointer-events: none; }
 .heart-i-shape { display: inline; color: inherit; font-family: inherit; }
 .heart-i-sr { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 h1, h2, h3, p { margin-top: 0; }
@@ -102,6 +102,7 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
 .birth-copy small { display: block; margin-top: 6px; color: #908b81; font-size: .66rem; }
 .gesture-note { margin: 30px 0 0 8%; color: #777266; font-family: var(--hand); font-size: .82rem; transform: rotate(-1deg); }
 .gesture-note span { display: inline-block; margin-right: 7px; color: var(--clay); font-size: 1.1rem; }
+.coincidence-note { max-width: 700px; margin: 19px 0 0 auto; color: #777266; font-family: var(--hand); font-size: .9rem; line-height: 1.6; text-align: right; transform: rotate(-.4deg); }
 .distance { position: relative; overflow: hidden; padding: 101px 0; background: #d8ded1; }
 .distance::after { position: absolute; right: -90px; bottom: -170px; width: 360px; height: 360px; border: 1px solid rgba(53,69,65,.14); border-radius: 46% 54% 64% 36%; content: ""; transform: rotate(29deg); }
 .distance-layout { position: relative; z-index: 1; display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; }
@@ -220,6 +221,7 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
   .birth-copy h3 { margin-top: 9px; font-size: 1.75rem; }
   .birth-copy p { font-size: .72rem; }
   .gesture-note { margin: 24px 0 0 8px; font-size: .75rem; }
+  .coincidence-note { margin: 16px 8px 0; font-size: .8rem; text-align: left; }
   .distance-layout { grid-template-columns: 1fr; gap: 36px; }
   .route-card { min-height: 204px; padding: 27px 15px 16px; }
   .route-card svg { height: 105px; }
