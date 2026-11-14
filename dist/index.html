@@ -26,7 +26,7 @@
       <div class="wrap hero-layout">
         <div class="hero-copy">
           <p class="eyebrow"><span class="tiny-sun" aria-hidden="true">✳</span> 18 de noviembre</p>
-          <h1 id="hero-title">Feliz primer<br><span>mesiversario.</span></h1>
+          <h1 id="hero-title">Feliz primer<br><span>mesiversario</span></h1>
           <p class="hero-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
           <div class="places-note"><span>México</span><span class="hand-arrow" aria-hidden="true">↔</span><span>Colombia</span></div>
         </div>
@@ -107,7 +107,7 @@
     <section class="portraits" id="fotos" aria-labelledby="portrait-title">
       <div class="wrap">
         <div class="section-intro photo-intro">
-          <div><p class="eyebrow">Fotos</p><h2 id="portrait-title">Tú <span class="handwritten">en momentos.</span></h2></div>
+          <div><p class="eyebrow">Fotos</p><h2 id="portrait-title">Mi mujer <span class="handwritten">hermosa</span></h2></div>
           <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
         </div>
         <div class="portrait-grid">
@@ -141,7 +141,7 @@
     <section class="messages" id="mensajes" aria-labelledby="messages-title">
       <div class="wrap">
         <div class="section-intro">
-          <div><p class="eyebrow">Para completar</p><h2 id="messages-title">Mensajes <span class="handwritten">para Alejandra.</span></h2></div>
+          <div><p class="eyebrow">Para completar</p><h2 id="messages-title">Mensajes <span class="handwritten">para mi señora</span></h2></div>
           <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="message-grid">
@@ -178,6 +178,7 @@
         viewerPhoto.src = button.dataset.src;
         viewerPhoto.alt = photo.alt;
         viewerCaption.textContent = photo.alt;
+        decorateHeartDots(viewerCaption);
         viewer.showModal();
       });
     });
@@ -231,9 +232,45 @@
         viewerMoon.className = "lightbox-moon moon-" + moon.dataset.moon;
         viewerMoon.style.setProperty("--turn", (moon.dataset.rotation || 0) + "deg");
         viewerCaption.textContent = moon.dataset.label;
+        decorateHeartDots(viewerCaption);
         viewer.showModal();
       });
     });
+
+    function decorateHeartDots(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (node) {
+          const parent = node.parentElement;
+          if (!parent || parent.closest("script, style, textarea, pre, code, svg, .heart-i, [aria-hidden='true']")) return NodeFilter.FILTER_REJECT;
+          return node.nodeValue.includes("i") ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        }
+      });
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+      textNodes.forEach(function (node) {
+        const fragment = document.createDocumentFragment();
+        node.nodeValue.split(/(i)/).forEach(function (part) {
+          if (part !== "i") {
+            fragment.append(document.createTextNode(part));
+            return;
+          }
+          const letter = document.createElement("span");
+          letter.className = "heart-i";
+          const visual = document.createElement("span");
+          visual.className = "heart-i-shape";
+          visual.setAttribute("aria-hidden", "true");
+          visual.textContent = "ı";
+          const spoken = document.createElement("span");
+          spoken.className = "heart-i-sr";
+          spoken.textContent = "i";
+          letter.append(visual, spoken);
+          fragment.append(letter);
+        });
+        node.replaceWith(fragment);
+      });
+    }
+
+    decorateHeartDots(document.body);
 
     document.querySelector(".lightbox-close").addEventListener("click", function () { viewer.close(); });
     viewer.addEventListener("click", function (event) { if (event.target === viewer) viewer.close(); });
