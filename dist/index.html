@@ -260,10 +260,14 @@
           visual.className = "heart-i-shape";
           visual.setAttribute("aria-hidden", "true");
           visual.textContent = "ı";
+          const heart = document.createElement("span");
+          heart.className = "heart-i-heart";
+          heart.setAttribute("aria-hidden", "true");
+          heart.textContent = "♥";
           const spoken = document.createElement("span");
           spoken.className = "heart-i-sr";
           spoken.textContent = "i";
-          letter.append(visual, spoken);
+          letter.append(visual, heart, spoken);
           fragment.append(letter);
         });
         node.replaceWith(fragment);
