@@ -14,7 +14,7 @@
   --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; overscroll-behavior-y: none; background: var(--paper); }
+html { scroll-behavior: auto; overscroll-behavior-y: none; background: var(--paper); }
 body {
   margin: 0;
   background-color: var(--paper);
