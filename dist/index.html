@@ -3,257 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111522">
-  <meta name="description" content="Un pequeño álbum para celebrar un primer mes juntos, entre México y Colombia, bajo dos lunas de nacimiento.">
-  <title>Dos lunas, un mismo cielo</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --night: #111522;
-      --night-deep: #0b0e19;
-      --night-soft: #1a2030;
-      --paper: #f1e9df;
-      --paper-dark: #e4d9ca;
-      --ink: #292a31;
-      --muted: #a9a8b1;
-      --muted-dark: #6f6a69;
-      --moon: #eedfca;
-      --rose: #e7aa9d;
-      --lavender: #c7bbdf;
-      --gold: #e3c59a;
-      --line: rgba(238, 223, 202, .2);
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--night); color: #f7f1e9; font-family: var(--sans); }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; }
-    .skip-link { position: fixed; z-index: 20; top: 1rem; left: 1rem; padding: .75rem 1rem; color: var(--night); background: var(--paper); transform: translateY(-160%); }
-    .skip-link:focus { transform: translateY(0); }
-    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
-    .eyebrow { margin: 0; color: var(--gold); font-size: .7rem; font-weight: 700; letter-spacing: .19em; line-height: 1.5; text-transform: uppercase; }
-    .section-label { display: inline-flex; gap: .7rem; align-items: center; color: var(--muted); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
-    .section-label::before { content: ""; width: 24px; height: 1px; background: var(--rose); }
-    .site-header { position: absolute; z-index: 5; top: 0; right: 0; left: 0; }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; border-bottom: 1px solid rgba(255,255,255,.12); }
-    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-family: var(--serif); font-size: 1.05rem; letter-spacing: .02em; }
-    .brand-mark { display: grid; width: 29px; height: 29px; place-items: center; border: 1px solid rgba(238,223,202,.55); border-radius: 50%; color: var(--gold); font-size: .84rem; }
-    .nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 38px); }
-    .nav a { color: #d2cdd0; font-size: .75rem; text-decoration: none; transition: color .2s ease; }
-    .nav a:hover, .nav a:focus-visible { color: var(--gold); }
-    .hero { position: relative; display: grid; min-height: 790px; min-height: min(900px, 100svh); overflow: hidden; align-items: center; isolation: isolate; background: radial-gradient(ellipse at 78% 38%, rgba(112,91,133,.2), transparent 34%), radial-gradient(ellipse at 18% 87%, rgba(166,100,105,.12), transparent 38%), linear-gradient(135deg, #151b2a 0%, #111522 56%, #0d101b 100%); }
-    .hero::before { position: absolute; z-index: -1; inset: 0; content: ""; opacity: .38; background-image: radial-gradient(1px 1px at 8% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 14% 68%, #dac5a8 99%, transparent), radial-gradient(1px 1px at 28% 37%, #fff 99%, transparent), radial-gradient(1px 1px at 43% 14%, #fff 99%, transparent), radial-gradient(1px 1px at 50% 76%, #dbc9b7 99%, transparent), radial-gradient(1px 1px at 72% 19%, #fff 99%, transparent), radial-gradient(1px 1px at 92% 69%, #fff 99%, transparent); background-size: 370px 290px; }
-    .hero::after { position: absolute; z-index: -1; right: -10vw; bottom: -34vw; width: 67vw; height: 67vw; border: 1px solid rgba(228,206,177,.09); border-radius: 50%; box-shadow: 0 0 0 48px rgba(228,206,177,.018), 0 0 0 98px rgba(228,206,177,.014); content: ""; }
-    .hero-layout { display: grid; grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr); gap: clamp(28px, 5vw, 70px); align-items: center; padding-top: 105px; padding-bottom: 55px; }
-    .hero-copy { position: relative; z-index: 2; padding: 32px 0; }
-    .hero-copy .eyebrow { margin-bottom: 23px; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2 { font-family: var(--serif); font-weight: 400; }
-    h1 { max-width: 620px; margin-bottom: 24px; font-size: clamp(3.5rem, 7vw, 6.65rem); letter-spacing: -.065em; line-height: .93; }
-    h1 em { color: var(--rose); font-weight: 400; }
-    .hero-intro { max-width: 415px; margin-bottom: 31px; color: #c5c1c5; font-family: var(--serif); font-size: 1.13rem; line-height: 1.75; }
-    .hero-actions { display: flex; align-items: center; gap: 20px; }
-    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 12px; padding: 0 20px; border: 1px solid rgba(231,170,157,.68); border-radius: 99px; color: #fff3ea; font-size: .75rem; letter-spacing: .04em; text-decoration: none; transition: background .2s ease, transform .2s ease; }
-    .button:hover, .button:focus-visible { transform: translateY(-2px); background: rgba(231,170,157,.12); }
-    .button-arrow { color: var(--rose); font-size: 1.15rem; }
-    .hero-note { color: #aaa6b0; font-size: .72rem; letter-spacing: .06em; }
-    .sky-art { position: relative; min-height: 560px; display: grid; align-items: center; justify-items: center; }
-    .orbit { position: absolute; width: min(100%, 560px); aspect-ratio: 1; border: 1px solid rgba(229,212,190,.16); border-radius: 50%; transform: rotate(-18deg) scaleY(.68); }
-    .orbit::before, .orbit::after { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px 3px rgba(227,197,154,.35); content: ""; }
-    .orbit::before { top: 19%; left: 18%; }
-    .orbit::after { right: 14%; bottom: 22%; width: 3px; height: 3px; }
-    .hero-moon { position: absolute; z-index: 2; overflow: hidden; aspect-ratio: 1; border-radius: 50%; background-repeat: no-repeat; filter: drop-shadow(0 0 25px rgba(227,197,154,.17)); }
-    .hero-moon.her { top: 12%; left: 13%; width: clamp(88px, 12vw, 142px); background-image: url("assets/moon-her-reference.png"); background-position: 17.7% 47%; background-size: 321% auto; }
-    .hero-moon.him { top: 26%; right: 9%; width: clamp(78px, 10vw, 120px); background-image: url("assets/moon-you-reference.png"); background-position: 17.2% 48.5%; background-size: 355.7% auto; }
-    .moon-caption { position: absolute; z-index: 3; color: #ddd6d2; font-size: .66rem; letter-spacing: .12em; line-height: 1.7; text-align: center; text-transform: uppercase; }
-    .moon-caption.her { top: 4%; left: 5%; }
-    .moon-caption.him { top: 19%; right: 1%; }
-    .moon-caption b { display: block; color: var(--gold); font-size: .61rem; font-weight: 600; }
-    .hero-photo { position: relative; z-index: 1; width: min(86%, 460px); margin: 0; overflow: hidden; aspect-ratio: .99; border: 1px solid rgba(239,225,206,.45); border-radius: 48% 48% 8px 8px; box-shadow: 0 28px 80px rgba(0,0,0,.38); transform: translateY(58px); }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 49% center; filter: saturate(.82) brightness(.81); }
-    .hero-photo::after { position: absolute; inset: 0; border: 12px solid rgba(19,23,34,.23); border-radius: inherit; content: ""; pointer-events: none; }
-    .photo-tag { position: absolute; z-index: 2; right: -2px; bottom: 13%; display: flex; align-items: center; gap: 9px; padding: 10px 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(15,19,31,.78); backdrop-filter: blur(12px); color: #f4eae3; font-family: var(--serif); font-size: .83rem; }
-    .photo-tag span { color: var(--rose); }
-    .hero-bottom { position: absolute; right: 0; bottom: 27px; left: 0; display: flex; justify-content: space-between; color: #a6a4ae; font-size: .63rem; letter-spacing: .16em; text-transform: uppercase; }
-    .hero-bottom span:last-child { display: inline-flex; align-items: center; gap: 10px; }
-    .hero-bottom span:last-child::before { width: 34px; height: 1px; background: var(--rose); content: ""; }
-    .moon-story { position: relative; overflow: hidden; padding: 126px 0 138px; background: #171b2a; }
-    .moon-story::after { position: absolute; top: 0; left: 50%; width: 1px; height: 100%; background: linear-gradient(transparent, rgba(238,223,202,.14) 20%, rgba(238,223,202,.14) 75%, transparent); content: ""; }
-    .section-heading { max-width: 650px; margin: 0 auto 64px; text-align: center; }
-    .section-heading .section-label { justify-content: center; }
-    .section-heading h2 { margin: 18px 0 16px; font-size: clamp(2.7rem, 5.4vw, 4.6rem); letter-spacing: -.05em; line-height: 1.03; }
-    .section-heading p { max-width: 480px; margin: 0 auto; color: #aaa8b3; font-family: var(--serif); font-size: 1rem; line-height: 1.7; }
-    .moon-cards { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px, 5vw, 70px); }
-    .moon-card { position: relative; min-height: 320px; overflow: hidden; padding: 33px 36px; border: 1px solid rgba(239,225,206,.15); background: linear-gradient(145deg, rgba(31,37,54,.94), rgba(22,26,40,.7)); }
-    .moon-card::after { position: absolute; right: -56px; bottom: -102px; width: 260px; height: 260px; border: 1px solid rgba(238,223,202,.11); border-radius: 50%; box-shadow: 0 0 0 28px rgba(238,223,202,.025), 0 0 0 57px rgba(238,223,202,.018); content: ""; }
-    .moon-card-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #b1aeb8; font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; }
-    .moon-card-top .index { color: var(--rose); font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0; }
-    .moon-card-main { display: flex; align-items: center; gap: 25px; margin-top: 42px; }
-    .moon-illustration { flex: 0 0 104px; width: 104px; height: 104px; border-radius: 50%; background-repeat: no-repeat; filter: drop-shadow(0 0 22px rgba(227,197,154,.14)); }
-    .moon-illustration.her { background-image: url("assets/moon-her-reference.png"); background-position: 17.7% 47%; background-size: 321% auto; }
-    .moon-illustration.him { background-image: url("assets/moon-you-reference.png"); background-position: 17.2% 48.5%; background-size: 355.7% auto; }
-    .moon-card h3 { margin-bottom: 9px; color: #f2e6d8; font-family: var(--serif); font-size: 2rem; font-weight: 400; letter-spacing: -.03em; }
-    .moon-date { margin-bottom: 13px; color: #d1c6bd; font-size: .8rem; letter-spacing: .05em; }
-    .moon-phase { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: .67rem; letter-spacing: .1em; text-transform: uppercase; }
-    .moon-phase::before { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); content: ""; }
-    .moon-light { margin: 9px 0 0; color: #8f909b; font-size: .68rem; }
-    .moon-thread { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 16px; margin: 44px auto 0; color: #c7bec1; font-family: var(--serif); font-size: 1rem; text-align: center; }
-    .moon-thread::before, .moon-thread::after { width: min(14vw, 126px); height: 1px; background: linear-gradient(90deg, transparent, rgba(231,170,157,.65)); content: ""; }
-    .moon-thread::after { transform: rotate(180deg); }
-    .moon-credit { position: relative; z-index: 1; max-width: 760px; margin: 23px auto 0; color: #888894; font-size: .58rem; letter-spacing: .06em; line-height: 1.6; text-align: center; }
-    .heart { color: var(--rose); font-size: .82rem; }
-    .distance { padding: 108px 0 112px; color: var(--ink); background: var(--paper); }
-    .distance .section-label { color: #726c6c; }
-    .distance .section-heading { margin-bottom: 55px; }
-    .distance .section-heading h2 { color: var(--ink); }
-    .distance .section-heading p { color: var(--muted-dark); }
-    .route { position: relative; display: grid; grid-template-columns: 1fr minmax(120px, .7fr) 1fr; align-items: center; max-width: 820px; margin: 0 auto; }
-    .place { display: flex; align-items: center; gap: 18px; }
-    .place:last-child { flex-direction: row-reverse; text-align: right; }
-    .place-mark { display: grid; flex: 0 0 50px; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(41,42,49,.28); border-radius: 50%; color: #9b655e; font-family: var(--serif); font-size: 1.2rem; }
-    .place strong { display: block; font-family: var(--serif); font-size: 1.4rem; font-weight: 400; }
-    .place small { color: #817a79; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; }
-    .route-line { position: relative; height: 1px; background: linear-gradient(90deg, #be9189, #d0bdaa); }
-    .route-line::before, .route-line::after { position: absolute; top: 50%; width: 5px; height: 5px; border: 1px solid #aa7771; border-radius: 50%; background: var(--paper); content: ""; transform: translateY(-50%); }
-    .route-line::before { left: 0; }
-    .route-line::after { right: 0; }
-    .route-heart { position: absolute; top: 50%; left: 50%; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(41,42,49,.18); border-radius: 50%; background: var(--paper); color: #b4746c; font-size: .83rem; transform: translate(-50%,-50%); }
-    .distance-caption { max-width: 520px; margin: 38px auto 0; color: #7e7777; font-family: var(--serif); font-size: .96rem; line-height: 1.65; text-align: center; }
-    .portraits { padding: 120px 0 130px; background: #e9dfd4; color: var(--ink); }
-    .portraits .section-label { color: #7a7070; }
-    .portraits .section-heading { margin-bottom: 55px; }
-    .portraits .section-heading h2 { color: var(--ink); }
-    .portraits .section-heading p { color: var(--muted-dark); }
-    .portrait-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 18px; align-items: start; }
-    .portrait { position: relative; margin: 0; padding: 8px 8px 18px; background: #f5eee6; box-shadow: 0 12px 30px rgba(47,36,35,.10); }
-    .portrait img { width: 100%; aspect-ratio: .78; object-fit: cover; filter: saturate(.78); }
-    .portrait:nth-child(1) { grid-column: 1 / span 2; margin-top: 52px; transform: rotate(-3deg); }
-    .portrait:nth-child(2) { grid-column: 3 / span 2; margin-top: 7px; transform: rotate(2deg); }
-    .portrait:nth-child(3) { grid-column: 5 / span 2; margin-top: 75px; transform: rotate(-1.5deg); }
-    .portrait:nth-child(4) { grid-column: 7 / span 2; margin-top: 12px; transform: rotate(2.5deg); }
-    .portrait:nth-child(5) { grid-column: 9 / span 2; margin-top: 58px; transform: rotate(-2deg); }
-    .portrait-end { grid-column: 11 / span 2; align-self: center; padding-left: 14px; color: #7c6f6d; font-family: var(--serif); font-size: clamp(1.25rem,2vw,1.9rem); line-height: 1.3; }
-    .portrait-end span { display: block; margin-top: 12px; color: #9c817a; font-family: var(--sans); font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; }
-    .sky-memories { padding: 121px 0 132px; background: #171b2a; }
-    .sky-memories .section-heading { margin-bottom: 53px; }
-    .sky-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .sky-shot { position: relative; grid-column: span 4; margin: 0; overflow: hidden; aspect-ratio: 1.35; background: #272a39; }
-    .sky-shot:nth-child(1), .sky-shot:nth-child(5) { grid-column: span 5; aspect-ratio: 1.55; }
-    .sky-shot:nth-child(2), .sky-shot:nth-child(4) { grid-column: span 3; aspect-ratio: .98; }
-    .sky-shot:nth-child(6) { grid-column: span 4; }
-    .sky-shot:nth-child(7) { grid-column: span 3; }
-    .sky-shot img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) brightness(.84); transition: filter .35s ease, transform .5s ease; }
-    .sky-shot:hover img { filter: saturate(1) brightness(1); transform: scale(1.035); }
-    .sky-shot figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 32px 15px 12px; background: linear-gradient(transparent, rgba(9,11,19,.72)); color: #f3e9dd; font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; }
-    .messages { position: relative; overflow: hidden; padding: 126px 0 136px; background: radial-gradient(ellipse at 50% 100%, rgba(139,97,113,.15), transparent 48%), var(--night-deep); }
-    .messages::before { position: absolute; top: 30px; left: calc(50% - 270px); width: 540px; height: 540px; border: 1px solid rgba(238,223,202,.07); border-radius: 50%; content: ""; }
-    .messages .section-heading { position: relative; margin-bottom: 55px; }
-    .message-grid { position: relative; display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
-    .message-card { display: flex; min-height: 230px; flex-direction: column; justify-content: space-between; padding: 26px 25px 23px; border: 1px solid rgba(238,223,202,.15); background: rgba(28,32,46,.67); }
-    .message-card:nth-child(2) { transform: translateY(18px); }
-    .message-number { color: var(--rose); font-size: .64rem; letter-spacing: .17em; }
-    .message-copy { margin: 35px 0; color: #d2c9c7; font-family: var(--serif); font-size: 1.05rem; line-height: 1.75; }
-    .closing { padding: 25px 24px 30px; border-top: 1px solid rgba(255,255,255,.1); background: var(--night-deep); color: #8e8c97; font-size: .62rem; letter-spacing: .13em; text-align: center; text-transform: uppercase; }
-    .closing span { color: var(--rose); }
-    @media (min-width: 1500px) { .hero-layout { grid-template-columns: .92fr 1.08fr; } }
-    @media (max-width: 880px) {
-      .hero { min-height: auto; }
-      .hero-layout { grid-template-columns: 1fr; gap: 0; padding-top: 150px; padding-bottom: 94px; }
-      .hero-copy { max-width: 660px; padding: 15px 0 0; }
-      .sky-art { min-height: 500px; margin-top: -6px; }
-      .hero-photo { width: min(78%, 410px); transform: translateY(32px); }
-      .hero-moon.her { left: 15%; }
-      .hero-moon.him { right: 14%; }
-      .moon-story { padding: 100px 0 110px; }
-      .moon-card { padding: 28px 24px; }
-      .moon-card-main { gap: 16px; }
-      .moon-illustration { flex-basis: 85px; width: 85px; height: 85px; }
-      .portrait-grid { grid-template-columns: repeat(6,1fr); gap: 15px; }
-      .portrait:nth-child(1) { grid-column: 1 / span 2; }
-      .portrait:nth-child(2) { grid-column: 3 / span 2; }
-      .portrait:nth-child(3) { grid-column: 5 / span 2; }
-      .portrait:nth-child(4) { grid-column: 2 / span 2; margin-top: 12px; }
-      .portrait:nth-child(5) { grid-column: 4 / span 2; margin-top: 48px; }
-      .portrait-end { grid-column: 1 / span 1; grid-row: 2; align-self: center; padding: 0; font-size: 1.1rem; }
-    }
-    @media (max-width: 600px) {
-      .wrap { width: min(100% - 34px, 490px); }
-      .header-inner { min-height: 72px; }
-      .brand { font-size: .94rem; }
-      .nav { gap: 15px; }
-      .nav a { font-size: .67rem; }
-      .nav a:first-child { display: none; }
-      .hero-layout { padding-top: 126px; padding-bottom: 78px; }
-      .hero-copy .eyebrow { margin-bottom: 18px; font-size: .61rem; }
-      h1 { font-size: clamp(3.45rem, 15.7vw, 5.6rem); }
-      .hero-intro { max-width: 350px; font-size: 1rem; line-height: 1.65; }
-      .hero-actions { align-items: flex-start; flex-direction: column; gap: 12px; }
-      .hero-note { padding-left: 5px; }
-      .sky-art { min-height: 355px; margin-top: 16px; }
-      .orbit { width: 105%; }
-      .hero-photo { width: 77%; transform: translateY(28px); }
-      .hero-moon.her { top: 9%; left: 7%; width: 83px; }
-      .hero-moon.him { top: 20%; right: 4%; width: 72px; }
-      .moon-caption { font-size: .57rem; }
-      .moon-caption b { font-size: .54rem; }
-      .moon-caption.her { top: 0; left: -3%; }
-      .moon-caption.him { top: 14%; right: 8%; }
-      .photo-tag { right: -4px; bottom: 9%; padding: 8px 10px; font-size: .72rem; }
-      .hero-bottom { bottom: 19px; font-size: .53rem; }
-      .hero-bottom span:last-child::before { width: 16px; }
-      .moon-story, .distance, .portraits, .sky-memories, .messages { padding: 84px 0 92px; }
-      .section-heading { margin-bottom: 40px; }
-      .section-heading h2 { margin: 14px 0; font-size: 2.8rem; }
-      .section-heading p { font-size: .94rem; }
-      .moon-story::after { display: none; }
-      .moon-cards { grid-template-columns: 1fr; gap: 14px; }
-      .moon-card { min-height: 245px; padding: 24px 22px; }
-      .moon-card-main { margin-top: 26px; }
-      .moon-card h3 { font-size: 1.75rem; }
-      .moon-illustration { flex-basis: 84px; width: 84px; height: 84px; }
-      .moon-thread { gap: 9px; margin-top: 27px; font-size: .86rem; }
-      .moon-thread::before, .moon-thread::after { width: 9vw; }
-      .route { grid-template-columns: 1fr 42px 1fr; }
-      .place { gap: 9px; }
-      .place:last-child { flex-direction: row-reverse; }
-      .place-mark { flex-basis: 36px; width: 36px; height: 36px; font-size: .92rem; }
-      .place strong { font-size: 1rem; }
-      .place small { font-size: .52rem; letter-spacing: .08em; }
-      .distance-caption { margin-top: 29px; font-size: .89rem; }
-      .portrait-grid { gap: 10px; }
-      .portrait { padding: 5px 5px 12px; }
-      .portrait:nth-child(1) { margin-top: 25px; }
-      .portrait:nth-child(3) { margin-top: 49px; }
-      .portrait:nth-child(4) { margin-top: 3px; }
-      .portrait:nth-child(5) { margin-top: 28px; }
-      .portrait-end { font-size: .83rem; }
-      .portrait-end span { font-size: .49rem; }
-      .sky-gallery { grid-template-columns: repeat(2,1fr); gap: 9px; }
-      .sky-shot, .sky-shot:nth-child(n) { grid-column: span 1; aspect-ratio: 1.05; }
-      .sky-shot:nth-child(1), .sky-shot:nth-child(5) { grid-column: span 2; aspect-ratio: 1.55; }
-      .sky-shot figcaption { padding: 25px 9px 8px; font-size: .53rem; letter-spacing: .07em; }
-      .message-grid { grid-template-columns: 1fr; gap: 12px; }
-      .message-card { min-height: 180px; padding: 21px; }
-      .message-card:nth-child(2) { transform: none; }
-      .message-copy { margin: 24px 0; font-size: 1rem; }
-      .closing { font-size: .53rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-    }
-  </style>
+  <meta name="theme-color" content="#f3eadc">
+  <meta name="description" content="Feliz primer mesiversario, Alejandra. 18 de noviembre.">
+  <title>Feliz primer mesiversario, Alejandra</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#inicio" aria-label="Dos lunas, ir al inicio"><span class="brand-mark" aria-hidden="true">✦</span><span>dos lunas</span></a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#lunas">Las lunas</a>
-        <a href="#recuerdos">Recuerdos</a>
+      <a class="brand" href="#inicio" aria-label="Inicio"><span class="brand-mark">A</span><span>Alejandra <i>·</i> 18/11</span></a>
+      <nav aria-label="Navegación principal">
+        <a href="#nacimientos">Nacimientos</a>
+        <a href="#fotos">Fotos</a>
         <a href="#mensajes">Mensajes</a>
       </nav>
     </div>
@@ -263,135 +25,219 @@
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="wrap hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow">México ↔ Colombia &nbsp;·&nbsp; primer mes</p>
-          <h1 id="hero-title">Dos lunas,<br><em>un mismo cielo.</em></h1>
-          <p class="hero-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <div class="hero-actions">
-            <a class="button" href="#lunas">Descubrir sus lunas <span class="button-arrow" aria-hidden="true">↘</span></a>
-            <span class="hero-note">22 mar. 2006 &nbsp;·&nbsp; 4 dic. 2004</span>
-          </div>
+          <p class="eyebrow"><span class="tiny-sun" aria-hidden="true">✳</span> 18 de noviembre</p>
+          <h1 id="hero-title">Feliz primer<br><span>mesiversario,</span><br><em>Alejandra.</em></h1>
+          <p class="hero-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+          <div class="places-note"><span>México</span><span class="hand-arrow" aria-hidden="true">↔</span><span>Colombia</span></div>
         </div>
-        <div class="sky-art" aria-label="Dos lunas sobre un recuerdo de Sky">
-          <div class="orbit" aria-hidden="true"></div>
-          <div class="moon-caption her">Ella<b>22 · 03 · 2006</b></div>
-          <div class="hero-moon her" role="img" aria-label="Luna de ella: cuarto menguante, 53 por ciento iluminada"></div>
-          <div class="moon-caption him">Tú<b>04 · 12 · 2004</b></div>
-          <div class="hero-moon him" role="img" aria-label="Tu luna: cuarto menguante, 55 por ciento iluminada"></div>
-          <figure class="hero-photo">
-            <img src="assets/sky-06.jpeg" alt="Dos avatares de Sky juntos ante un atardecer rosado" fetchpriority="high">
-          </figure>
-          <div class="photo-tag"><span aria-hidden="true">✦</span> recuerdos en Sky</div>
+        <div class="hero-collage" aria-label="Lunas y recuerdos de Sky">
+          <div class="photo-print hero-print">
+            <button class="photo-button" type="button" data-src="assets/sky-06.jpeg" aria-label="Ampliar captura de Sky">
+              <img src="assets/sky-06.jpeg" alt="Dos avatares de Sky COTL frente a un atardecer" fetchpriority="high">
+            </button>
+            <span class="photo-caption">Sky · COTL</span>
+          </div>
+          <button class="moon-disc moon-rotator moon-ale" type="button" data-moon="ale" data-rotation="-9" data-label="Alejandra · 22 de marzo de 2006" aria-label="Girar o ampliar la luna de Alejandra"></button>
+          <span class="moon-stamp stamp-ale">22 · 03 · 2006</span>
+          <button class="moon-disc moon-rotator moon-tu" type="button" data-moon="tu" data-rotation="8" data-label="Tú · 4 de diciembre de 2004" aria-label="Girar o ampliar tu luna"></button>
+          <span class="moon-stamp stamp-tu">04 · 12 · 2004</span>
+          <span class="date-scribble">18 <small>nov.</small></span>
+          <span class="tiny-star star-one" aria-hidden="true">✳</span>
+          <span class="tiny-star star-two" aria-hidden="true">✳</span>
         </div>
       </div>
-      <div class="wrap hero-bottom"><span>Un mes juntos</span><span>Las fechas que los unen</span></div>
+      <div class="wrap hero-foot"><span>22 · 03 · 2006</span><span class="handwritten">Alejandra &amp; tú</span><span>04 · 12 · 2004</span></div>
     </section>
 
-    <section class="moon-story" id="lunas" aria-labelledby="moon-title">
+    <section class="birthdays" id="nacimientos" aria-labelledby="birth-title">
       <div class="wrap">
-        <div class="section-heading">
-          <span class="section-label">Sus fechas de nacimiento</span>
-          <h2 id="moon-title">Dos nacimientos,<br>dos lunas.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow">Las fechas de nacimiento</p>
+            <h2 id="birth-title">Las lunas de nuestros<br><span class="handwritten">nacimientos.</span></h2>
+          </div>
+          <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
         </div>
-        <div class="moon-cards">
-          <article class="moon-card">
-            <div class="moon-card-top"><span>Ella &nbsp;·&nbsp; México</span><span class="index">01</span></div>
-            <div class="moon-card-main">
-              <div class="moon-illustration her" role="img" aria-label="Cuarto menguante, 53 por ciento iluminada"></div>
-              <div>
-                <h3>Su luna</h3>
-                <p class="moon-date">22 de marzo de 2006</p>
-                <span class="moon-phase">Cuarto menguante</span>
-                <p class="moon-light">53 % iluminada</p>
-              </div>
+        <div class="birth-grid">
+          <article class="birth-note birth-note-ale">
+            <button class="moon-disc moon-rotator moon-ale" type="button" data-moon="ale" data-rotation="-4" data-label="Alejandra · 22 de marzo de 2006" aria-label="Girar o ampliar la luna de Alejandra"></button>
+            <div class="birth-copy">
+              <span class="birth-index">01 / MÉXICO</span>
+              <h3>Alejandra</h3>
+              <p>22 de marzo de 2006</p>
+              <span class="phase-label">Cuarto menguante</span>
+              <small>53 % iluminada</small>
             </div>
           </article>
-          <article class="moon-card">
-            <div class="moon-card-top"><span>Tú &nbsp;·&nbsp; Colombia</span><span class="index">02</span></div>
-            <div class="moon-card-main">
-              <div class="moon-illustration him" role="img" aria-label="Cuarto menguante, 55 por ciento iluminada"></div>
-              <div>
-                <h3>Tu luna</h3>
-                <p class="moon-date">4 de diciembre de 2004</p>
-                <span class="moon-phase">Cuarto menguante</span>
-                <p class="moon-light">55 % iluminada</p>
-              </div>
+          <article class="birth-note birth-note-tu">
+            <button class="moon-disc moon-rotator moon-tu" type="button" data-moon="tu" data-rotation="5" data-label="Tú · 4 de diciembre de 2004" aria-label="Girar o ampliar tu luna"></button>
+            <div class="birth-copy">
+              <span class="birth-index">02 / COLOMBIA</span>
+              <h3>Tú</h3>
+              <p>4 de diciembre de 2004</p>
+              <span class="phase-label">Cuarto menguante</span>
+              <small>55 % iluminada</small>
             </div>
           </article>
         </div>
-        <div class="moon-thread"><span class="heart" aria-hidden="true">✦</span><span>Y ahora celebran su primer mes</span><span class="heart" aria-hidden="true">✦</span></div>
-        <p class="moon-credit">Crédito visual de las lunas: NASA / Goddard Space Flight Center Scientific Visualization Studio.</p>
+        <p class="gesture-note"><span aria-hidden="true">↻</span> Arrastra las lunas para girarlas. Tócalas para ampliar.</p>
       </div>
     </section>
 
     <section class="distance" aria-labelledby="distance-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="section-label">A la distancia</span>
-          <h2 id="distance-title">México &amp; Colombia</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="wrap distance-layout">
+        <div>
+          <p class="eyebrow">México · Colombia</p>
+          <h2 id="distance-title">México<br><span class="handwritten">↔ Colombia.</span></h2>
+          <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
         </div>
-        <div class="route" aria-label="Conexión entre México y Colombia">
-          <div class="place"><span class="place-mark" aria-hidden="true">MX</span><span><strong>México</strong><small>Ella</small></span></div>
-          <div class="route-line" aria-hidden="true"><span class="route-heart">✦</span></div>
-          <div class="place"><span class="place-mark" aria-hidden="true">CO</span><span><strong>Colombia</strong><small>Tú</small></span></div>
+        <div class="route-card" aria-label="México y Colombia conectados">
+          <span class="route-place route-mx">México</span>
+          <svg viewBox="0 0 360 90" role="img" aria-label="Línea dibujada que une dos puntos">
+            <path d="M8 52 C53 15, 78 78, 118 43 S183 30, 216 52 S285 69, 350 31" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 0"/>
+            <circle cx="8" cy="52" r="5" fill="currentColor"/><circle cx="350" cy="31" r="5" fill="currentColor"/>
+            <path d="M170 42c-8-10-24 0-8 14l8 7 8-7c16-14 0-24-8-14z" fill="currentColor"/>
+          </svg>
+          <span class="route-place route-co">Colombia</span>
+          <span class="route-caption">Lorem ipsum dolor sit amet</span>
         </div>
-        <p class="distance-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </section>
 
-    <section class="portraits" id="recuerdos" aria-labelledby="portrait-title">
+    <section class="portraits" id="fotos" aria-labelledby="portrait-title">
       <div class="wrap">
-        <div class="section-heading">
-          <span class="section-label">Un pedacito de ella</span>
-          <h2 id="portrait-title">Fotos de ella.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="section-intro photo-intro">
+          <div><p class="eyebrow">Fotos</p><h2 id="portrait-title">Alejandra <span class="handwritten">en momentos.</span></h2></div>
+          <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
         </div>
         <div class="portrait-grid">
-          <figure class="portrait"><img src="assets/portrait-01.jpeg" alt="Retrato espontáneo de ella" loading="lazy"></figure>
-          <figure class="portrait"><img src="assets/portrait-02.jpeg" alt="Ella al aire libre" loading="lazy"></figure>
-          <figure class="portrait"><img src="assets/portrait-03.jpeg" alt="Ella haciendo un gesto con las manos" loading="lazy"></figure>
-          <figure class="portrait"><img src="assets/portrait-04.jpeg" alt="Retrato de ella recostada" loading="lazy"></figure>
-          <figure class="portrait"><img src="assets/portrait-05.jpeg" alt="Retrato de ella mirando a cámara" loading="lazy"></figure>
-          <div class="portrait-end">Retratos<span>05 fotos</span></div>
+          <figure class="print print-a"><button class="photo-button" type="button" data-src="assets/portrait-01.jpeg" aria-label="Ampliar foto 1 de Alejandra"><img src="assets/portrait-01.jpeg" alt="Alejandra en un retrato espontáneo" loading="lazy"></button><figcaption>01</figcaption></figure>
+          <figure class="print print-b"><button class="photo-button" type="button" data-src="assets/portrait-02.jpeg" aria-label="Ampliar foto 2 de Alejandra"><img src="assets/portrait-02.jpeg" alt="Alejandra al aire libre" loading="lazy"></button><figcaption>02</figcaption></figure>
+          <figure class="print print-c"><button class="photo-button" type="button" data-src="assets/portrait-03.jpeg" aria-label="Ampliar foto 3 de Alejandra"><img src="assets/portrait-03.jpeg" alt="Alejandra haciendo un gesto con las manos" loading="lazy"></button><figcaption>03</figcaption></figure>
+          <figure class="print print-d"><button class="photo-button" type="button" data-src="assets/portrait-04.jpeg" aria-label="Ampliar foto 4 de Alejandra"><img src="assets/portrait-04.jpeg" alt="Alejandra recostada" loading="lazy"></button><figcaption>04</figcaption></figure>
+          <figure class="print print-e"><button class="photo-button" type="button" data-src="assets/portrait-05.jpeg" aria-label="Ampliar foto 5 de Alejandra"><img src="assets/portrait-05.jpeg" alt="Alejandra mirando a cámara" loading="lazy"></button><figcaption>05</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="sky-memories" aria-labelledby="sky-title">
       <div class="wrap">
-        <div class="section-heading">
-          <span class="section-label">Sus aventuras en Sky COTL</span>
-          <h2 id="sky-title">Juntos en Sky.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="section-intro sky-intro">
+          <div><p class="eyebrow">Sky · COTL</p><h2 id="sky-title">Dentro del <span class="handwritten">juego.</span></h2></div>
+          <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.</p>
         </div>
         <div class="sky-gallery">
-          <figure class="sky-shot"><img src="assets/sky-01.jpeg" alt="Un avatar de Sky frente a una montaña" loading="lazy"><figcaption>Sky COTL · 01</figcaption></figure>
-          <figure class="sky-shot"><img src="assets/sky-02.jpeg" alt="Avatares de Sky junto a unas velas" loading="lazy"><figcaption>Sky COTL · 02</figcaption></figure>
-          <figure class="sky-shot"><img src="assets/sky-03.jpeg" alt="Avatares reunidos en una zona nocturna de Sky" loading="lazy"><figcaption>Sky COTL · 03</figcaption></figure>
-          <figure class="sky-shot"><img src="assets/sky-04.jpeg" alt="Dos avatares mirando el atardecer en Sky" loading="lazy"><figcaption>Sky COTL · 04</figcaption></figure>
-          <figure class="sky-shot"><img src="assets/sky-05.jpeg" alt="Dos avatares caminando en un paisaje rosado de Sky" loading="lazy"><figcaption>Sky COTL · 05</figcaption></figure>
-          <figure class="sky-shot"><img src="assets/sky-06.jpeg" alt="Dos avatares de Sky juntos ante un cielo de atardecer" loading="lazy"><figcaption>Sky COTL · 06</figcaption></figure>
-          <figure class="sky-shot"><img src="assets/sky-07.jpeg" alt="Avatares reunidos alrededor de una luz en Sky" loading="lazy"><figcaption>Sky COTL · 07</figcaption></figure>
+          <figure class="sky-shot shot-one"><button class="photo-button" type="button" data-src="assets/sky-01.jpeg" aria-label="Ampliar captura 1 de Sky"><img src="assets/sky-01.jpeg" alt="Avatar de Sky frente a una montaña" loading="lazy"></button><figcaption>01</figcaption></figure>
+          <figure class="sky-shot shot-two"><button class="photo-button" type="button" data-src="assets/sky-02.jpeg" aria-label="Ampliar captura 2 de Sky"><img src="assets/sky-02.jpeg" alt="Avatares de Sky junto a velas" loading="lazy"></button><figcaption>02</figcaption></figure>
+          <figure class="sky-shot shot-three"><button class="photo-button" type="button" data-src="assets/sky-03.jpeg" aria-label="Ampliar captura 3 de Sky"><img src="assets/sky-03.jpeg" alt="Avatares de Sky en una zona nocturna" loading="lazy"></button><figcaption>03</figcaption></figure>
+          <figure class="sky-shot shot-four"><button class="photo-button" type="button" data-src="assets/sky-04.jpeg" aria-label="Ampliar captura 4 de Sky"><img src="assets/sky-04.jpeg" alt="Avatares de Sky en un paisaje rosado" loading="lazy"></button><figcaption>04</figcaption></figure>
+          <figure class="sky-shot shot-five"><button class="photo-button" type="button" data-src="assets/sky-05.jpeg" aria-label="Ampliar captura 5 de Sky"><img src="assets/sky-05.jpeg" alt="Avatar de Sky frente al atardecer" loading="lazy"></button><figcaption>05</figcaption></figure>
+          <figure class="sky-shot shot-six"><button class="photo-button" type="button" data-src="assets/sky-06.jpeg" aria-label="Ampliar captura 6 de Sky"><img src="assets/sky-06.jpeg" alt="Dos avatares de Sky juntos" loading="lazy"></button><figcaption>06</figcaption></figure>
+          <figure class="sky-shot shot-seven"><button class="photo-button" type="button" data-src="assets/sky-07.jpeg" aria-label="Ampliar captura 7 de Sky"><img src="assets/sky-07.jpeg" alt="Avatares de Sky alrededor de una luz" loading="lazy"></button><figcaption>07</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="messages" id="mensajes" aria-labelledby="messages-title">
       <div class="wrap">
-        <div class="section-heading">
-          <span class="section-label">Un espacio para tus palabras</span>
-          <h2 id="messages-title">Mensajes para ella.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="section-intro">
+          <div><p class="eyebrow">Para completar</p><h2 id="messages-title">Mensajes <span class="handwritten">para Alejandra.</span></h2></div>
+          <p class="placeholder-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="message-grid">
-          <article class="message-card"><span class="message-number">MENSAJE 01</span><p class="message-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></article>
-          <article class="message-card"><span class="message-number">MENSAJE 02</span><p class="message-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></article>
-          <article class="message-card"><span class="message-number">MENSAJE 03</span><p class="message-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></article>
+          <article class="message-note"><span>MENSAJE 01</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></article>
+          <article class="message-note"><span>MENSAJE 02</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></article>
+          <article class="message-note"><span>MENSAJE 03</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></article>
         </div>
       </div>
     </section>
   </main>
-  <footer class="closing">México <span>✦</span> Colombia &nbsp;·&nbsp; Un mes juntos &nbsp;·&nbsp; Bajo las mismas lunas</footer>
+
+  <footer class="site-footer"><span>18 de noviembre</span><span class="handwritten">Alejandra · México · Colombia</span></footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Imagen ampliada">
+    <button class="lightbox-close" type="button" aria-label="Cerrar imagen">×</button>
+    <div class="lightbox-stage">
+      <img id="lightbox-photo" alt="">
+      <div id="lightbox-moon" class="lightbox-moon" aria-hidden="true"></div>
+    </div>
+    <p id="lightbox-caption"></p>
+  </dialog>
+
+  <script>
+    const viewer = document.getElementById("lightbox");
+    const viewerPhoto = document.getElementById("lightbox-photo");
+    const viewerMoon = document.getElementById("lightbox-moon");
+    const viewerCaption = document.getElementById("lightbox-caption");
+
+    document.querySelectorAll(".photo-button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const photo = button.querySelector("img");
+        viewerMoon.hidden = true;
+        viewerPhoto.hidden = false;
+        viewerPhoto.src = button.dataset.src;
+        viewerPhoto.alt = photo.alt;
+        viewerCaption.textContent = photo.alt;
+        viewer.showModal();
+      });
+    });
+
+    document.querySelectorAll(".moon-rotator").forEach(function (moon) {
+      let drag = null;
+      function angleAt(event) {
+        const rect = moon.getBoundingClientRect();
+        return Math.atan2(event.clientY - (rect.top + rect.height / 2), event.clientX - (rect.left + rect.width / 2)) * 180 / Math.PI;
+      }
+      function setAngle(value) {
+        moon.dataset.rotation = String(value);
+        moon.style.setProperty("--turn", value + "deg");
+      }
+      moon.addEventListener("pointerdown", function (event) {
+        if (event.button !== undefined && event.button !== 0) return;
+        drag = { pointer: event.pointerId, previous: angleAt(event), rotation: Number(moon.dataset.rotation || 0), moved: false, x: event.clientX, y: event.clientY };
+        moon.setPointerCapture(event.pointerId);
+        moon.classList.add("is-dragging");
+      });
+      moon.addEventListener("pointermove", function (event) {
+        if (!drag || drag.pointer !== event.pointerId) return;
+        const current = angleAt(event);
+        let delta = current - drag.previous;
+        if (delta > 180) delta -= 360;
+        if (delta < -180) delta += 360;
+        if (Math.hypot(event.clientX - drag.x, event.clientY - drag.y) > 4) drag.moved = true;
+        drag.rotation += delta;
+        drag.previous = current;
+        setAngle(drag.rotation);
+      });
+      moon.addEventListener("pointerup", function () {
+        if (!drag) return;
+        moon.classList.remove("is-dragging");
+        if (drag.moved) {
+          moon.dataset.dragged = "true";
+          window.setTimeout(function () { delete moon.dataset.dragged; }, 180);
+        }
+        drag = null;
+      });
+      moon.addEventListener("pointercancel", function () { drag = null; moon.classList.remove("is-dragging"); });
+      moon.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        setAngle(Number(moon.dataset.rotation || 0) + (event.key === "ArrowRight" ? 12 : -12));
+      });
+      moon.addEventListener("click", function () {
+        if (moon.dataset.dragged) return;
+        viewerPhoto.hidden = true;
+        viewerMoon.hidden = false;
+        viewerMoon.className = "lightbox-moon moon-" + moon.dataset.moon;
+        viewerMoon.style.setProperty("--turn", (moon.dataset.rotation || 0) + "deg");
+        viewerCaption.textContent = moon.dataset.label;
+        viewer.showModal();
+      });
+    });
+
+    document.querySelector(".lightbox-close").addEventListener("click", function () { viewer.close(); });
+    viewer.addEventListener("click", function (event) { if (event.target === viewer) viewer.close(); });
+    viewer.addEventListener("close", function () { viewerPhoto.removeAttribute("src"); });
+  </script>
 </body>
 </html>
