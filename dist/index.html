@@ -241,7 +241,7 @@
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
         acceptNode: function (node) {
           const parent = node.parentElement;
-          if (!parent || parent.closest("script, style, textarea, pre, code, svg, .heart-i, [aria-hidden='true']")) return NodeFilter.FILTER_REJECT;
+          if (!parent || parent.closest("script, style, textarea, pre, code, svg, .heart-i, [aria-hidden='true']") || getComputedStyle(parent).textTransform === "uppercase") return NodeFilter.FILTER_REJECT;
           return node.nodeValue.includes("i") ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
         }
       });
