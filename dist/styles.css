@@ -42,8 +42,8 @@ nav a:hover, nav a:focus-visible { color: var(--clay); text-decoration: underlin
 .hero-layout { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 5vw, 72px); align-items: center; min-height: 560px; }
 .hero-copy { position: relative; z-index: 2; padding: 30px 0 52px; }
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 17px; color: var(--clay); font-size: .67rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-.heart-i { position: relative; display: inline; color: inherit; line-height: 1; }
-.heart-i-svg { position: absolute; top: .2em; left: 50%; display: block; width: .22em; height: .18em; overflow: visible; fill: currentColor; transform: translateX(-50%); pointer-events: none; }
+.heart-i { color: inherit; white-space: nowrap; }
+.heart-i-svg { position: relative; top: 0; left: 0; display: inline-block; width: .18em; height: .16em; margin-left: -.18em; overflow: visible; fill: currentColor; vertical-align: .55em; pointer-events: none; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 h1 { max-width: 650px; margin-bottom: 23px; font-size: clamp(3.2rem, 6.4vw, 6.5rem); letter-spacing: -.07em; line-height: .92; }
@@ -94,9 +94,7 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
 .birth-index { color: #8b897d; font-size: .59rem; letter-spacing: .14em; }
 .phase-label { display: block; color: var(--green); font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .birth-copy small { display: block; margin-top: 6px; color: #908b81; font-size: .66rem; }
-.gesture-note { margin: 30px 0 0 8%; color: #777266; font-family: var(--hand); font-size: .82rem; transform: rotate(-1deg); }
-.gesture-note > span { display: inline-block; margin-right: 7px; color: var(--clay); font-size: 1.1rem; }
-.coincidence-note { max-width: 100%; margin: 19px 0 0 auto; color: #777266; font-family: var(--hand); font-size: .9rem; line-height: 1.6; text-align: right; transform: rotate(-.4deg); }
+.coincidence-note { max-width: 100%; margin: 19px 0 0 auto; color: var(--clay); font-family: var(--hand); font-size: .9rem; line-height: 1.6; text-align: right; transform: rotate(-.4deg); }
 .distance { position: relative; overflow: hidden; padding: 101px 0; background: #d8ded1; }
 .distance::after { position: absolute; right: -90px; bottom: -170px; width: 360px; height: 360px; border: 1px solid rgba(53,69,65,.14); border-radius: 46% 54% 64% 36%; content: ""; transform: rotate(29deg); }
 .distance-layout { position: relative; z-index: 1; display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; }
@@ -105,7 +103,7 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
 .distance .placeholder-copy { max-width: 370px; margin: 0; }
 .route-card { position: relative; min-height: 235px; padding: 28px 31px 21px; border: 1px solid rgba(53,69,65,.25); border-radius: 48% 51% 43% 54% / 10% 15% 12% 16%; color: #657562; transform: rotate(-1.4deg); }
 .route-card > svg { display: block; width: 100%; height: 118px; overflow: visible; }
-.route-place { position: absolute; top: 25px; color: #45564c; font-family: var(--hand); font-size: 1.1rem; }
+.route-place { position: absolute; top: 25px; color: #45564c; font-family: var(--hand); font-size: 1.02rem; }
 .route-mx { left: 27px; transform: rotate(-5deg); }
 .route-co { right: 28px; transform: rotate(4deg); }
 .route-caption { display: block; margin-top: 8px; color: #788274; font-family: var(--serif); font-size: .8rem; text-align: center; }
@@ -141,9 +139,9 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
 .messages .section-intro h2 .handwritten { color: var(--green); }
 .messages .section-intro .placeholder-copy { max-width: 300px; }
 .message-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.message-note { min-height: 195px; padding: 23px 25px; background: #f9edc9; box-shadow: 0 8px 16px rgba(49,42,32,.12); transform: rotate(-1.5deg); }
-.message-note:nth-child(2) { margin-top: 22px; background: #f4e8d8; transform: rotate(1.6deg); }
-.message-note:nth-child(3) { margin-top: 5px; background: #e1e7d8; transform: rotate(-.8deg); }
+.message-note { min-height: 195px; padding: 23px 25px; background: #f9edc9; box-shadow: 0 8px 16px rgba(49,42,32,.12); transform: rotate(-.55deg); }
+.message-note:nth-child(2) { margin-top: 22px; background: #f4e8d8; transform: rotate(.6deg); }
+.message-note:nth-child(3) { margin-top: 5px; background: #e1e7d8; transform: rotate(-.35deg); }
 .message-note span { color: #817768; font-size: .6rem; letter-spacing: .13em; }
 .message-note p { margin: 27px 0 0; color: #58544b; font-family: var(--serif); font-size: .98rem; line-height: 1.7; }
 .site-footer { display: flex; min-height: 75px; align-items: center; justify-content: space-between; gap: 20px; padding: 14px max(28px, calc((100vw - 1160px)/2)); background: #333e3a; color: #e9e1d3; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; }
@@ -214,7 +212,6 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
   .birth-note .moon-disc { flex-basis: 91px; width: 91px; }
   .birth-copy h3 { margin-top: 9px; font-size: 1.75rem; }
   .birth-copy p { font-size: .72rem; }
-  .gesture-note { margin: 24px 0 0 8px; font-size: .75rem; }
   .coincidence-note { margin: 16px 8px 0; font-size: .8rem; text-align: left; }
   .distance-layout { grid-template-columns: 1fr; gap: 36px; }
   .route-card { min-height: 204px; padding: 27px 15px 16px; }
