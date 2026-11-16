@@ -42,8 +42,9 @@ nav a:hover, nav a:focus-visible { color: var(--clay); text-decoration: underlin
 .hero-layout { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 5vw, 72px); align-items: center; min-height: 560px; }
 .hero-copy { position: relative; z-index: 2; padding: 30px 0 52px; }
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 17px; color: var(--clay); font-size: .67rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-.heart-i { color: inherit; white-space: nowrap; }
-.heart-i-svg { position: relative; top: 0; left: 0; display: inline-block; width: .18em; height: .16em; margin-left: -.18em; overflow: visible; fill: currentColor; vertical-align: .55em; pointer-events: none; }
+.heart-word { white-space: nowrap; }
+.heart-i { position: relative; display: inline-block; color: inherit; font: inherit; line-height: 1em; vertical-align: baseline; }
+.heart-i-svg { position: absolute; top: .25em; left: 50%; display: block; width: .2em; height: .18em; overflow: visible; fill: currentColor; transform: translateX(-50%); pointer-events: none; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 h1 { max-width: 650px; margin-bottom: 23px; font-size: clamp(3.2rem, 6.4vw, 6.5rem); letter-spacing: -.07em; line-height: .92; }
