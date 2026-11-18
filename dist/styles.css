@@ -186,6 +186,7 @@ h1 em { display: inline-block; color: var(--clay); font-family: var(--hand); fon
   .hero-copy { padding: 22px 0 8px; }
   .eyebrow { font-size: .61rem; }
   h1 { margin-bottom: 19px; font-size: clamp(3.35rem, 15vw, 4.9rem); }
+  .hero h1 .heart-i-svg, h2 .heart-i-svg, h2 .handwritten .heart-i-svg { top: .15em; }
   .hero-note { max-width: 335px; font-size: .98rem; }
   .hero-collage { min-height: 345px; margin-top: 0; }
   .hero-print { top: 37px; right: 7%; width: 81%; }
