@@ -47,6 +47,7 @@ nav a:hover, nav a:focus-visible { color: var(--clay); text-decoration: underlin
 .heart-i-svg { position: absolute; top: .1em; left: 50%; display: block; width: .2em; height: .18em; overflow: visible; fill: currentColor; transform: translateX(-50%); pointer-events: none; }
 .hero-highlight .heart-i-svg { top: .2em; left: 80%; }
 .handwritten .heart-i-svg { top: .22em; left: 80%; }
+.hero h1 .heart-i-svg, h2 .heart-i-svg, h2 .handwritten .heart-i-svg { top: .2em; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 h1 { max-width: 650px; margin-bottom: 23px; font-size: clamp(3.2rem, 6.4vw, 6.5rem); letter-spacing: -.07em; line-height: .92; }
